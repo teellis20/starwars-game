@@ -1,0 +1,35 @@
+body {
+    background-image: url("../images/mill-falc.png");
+    background-repeat: no-repeat;
+}
+
+@font-face {
+    font-family: 'star_jedi_outlineregular';
+    src: url('../images/starjout-webfont.woff2') format('woff2'),
+         url('../images/starjout-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    float: right;
+    margin-right: 15%;
+    font-family: "star_jedi_outlineregular";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 35px;
+}
+
+img {
+    width: 125px;
+    height: 85px;
+}
+
+.characters {
+    float: left;
+    margin: 10px;
+}
+
+p {
+    text-align: center;
+}
