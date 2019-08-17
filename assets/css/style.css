@@ -48,6 +48,15 @@ img {
     box-shadow: 7px 7px 7px firebrick;
 }
 
+.defender {
+     border: 10px solid black;
+}
+
+.enemies {
+    border: 5px solid red;
+    color: white;
+}
+
 p {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
