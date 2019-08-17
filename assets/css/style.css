@@ -40,12 +40,33 @@ img {
     display: inline-block;
 }
 
+.light-side {
+    box-shadow: 7px 7px 7px limegreen;
+}
+
+.dark-side {
+    box-shadow: 7px 7px 7px firebrick;
+}
+
 p {
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 h3 {
     font-family: "star_jedi_outlineregular";
     font-weight: normal;
     font-style: normal;
+    font-size: 20px;
+}
+
+button {
+    margin: 10px;
+    background: white;
+    color: black;
+    border: black 2px solid;
+    padding: 10px 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
