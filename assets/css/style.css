@@ -1,6 +1,7 @@
 body {
     background-image: url("../images/mill-falc.png");
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 @font-face {
@@ -12,12 +13,16 @@ body {
 }
 
 h1 {
-    float: right;
-    margin-right: 15%;
+    margin-left: 65%;
     font-family: "star_jedi_outlineregular";
     font-weight: normal;
     font-style: normal;
     font-size: 35px;
+}
+
+#title {
+    width: 100%;
+    padding: 15px 0 15px 0;
 }
 
 img {
@@ -25,11 +30,22 @@ img {
     height: 85px;
 }
 
+#at-start {
+    
+    width: 100%;
+}
+
 .characters {
-    float: left;
     margin: 10px;
+    display: inline-block;
 }
 
 p {
     text-align: center;
+}
+
+h3 {
+    font-family: "star_jedi_outlineregular";
+    font-weight: normal;
+    font-style: normal;
 }
