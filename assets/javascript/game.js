@@ -149,7 +149,7 @@ function attack(currentEnemy, currentHero) {
     if (currentEnemy.health > 0) {
     currentEnemy.health -= currentHero.strength;
     console.log("health: " + currentEnemy.health);
-    currentHero.strength += currentHero.strength;
+    currentHero.strength += currentHero.counterStrike;
     console.log("strength: " + currentHero.strength);
     counterAttack(currentEnemy, currentHero);
     showHealth();
