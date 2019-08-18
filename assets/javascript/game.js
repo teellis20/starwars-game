@@ -1,28 +1,31 @@
 var kylo = {
     name: "kylo",
     health: 110,
-    strength: 5,
- 
+    strength: 10,
+    counterStrike: 25, 
 };
 
 var maul = {
     name: "maul",
     health: 125,
-    strength: 10,
-
+    strength: 15,
+    counterStrike: 20,
 };
 
 var obi = {
     name: "obi",
     health: 150,
     strength: 20,
+    counterStrike: 15,
 };
 
 var yoda = {
     name: "yoda",
     health: 180,
     strength: 25,
+    counterStrike: 10,
 };
+
 var heroArray = [kylo, maul, obi, yoda];
 var enemyArray = [kylo, maul, obi, yoda];
 var currentHero;
@@ -74,7 +77,7 @@ $("#yoda-health").html(yoda.health);
 showHealth();
 
 function counterAttack(currentEnemy, currentHero) {
-    currentHero.health -= currentEnemy.strength;
+    currentHero.health -= currentEnemy.counterStrike;
     if (currentHero.health <= 0) {
         $("#" + currentHero.name + "-box").detach();
         $("#messages").html("<h2>The Force is Weak in This one! You Lost The Game!</h2>");
@@ -89,10 +92,6 @@ function counterAttack(currentEnemy, currentHero) {
     }
 
 }
-
-// make if statements where if clicked at start, chooses your character and moves the rest to enemies
-
-// $("#kylo-box").on("click", heroSelect("#kylo-box"));
 
 $("#kylo-box").on("click", function(){
     if (isHero === false) {
@@ -149,12 +148,11 @@ $("#yoda-box").on("click", function(){
 function attack(currentEnemy, currentHero) {
     if (currentEnemy.health > 0) {
     currentEnemy.health -= currentHero.strength;
-    currentHero.health -= currentEnemy.strength;
     console.log("health: " + currentEnemy.health);
-    currentHero.strength += 8;
+    currentHero.strength += currentHero.strength;
     console.log("strength: " + currentHero.strength);
-    showHealth();
     counterAttack(currentEnemy, currentHero);
+    showHealth();
     if (currentEnemy.health <= 0) {
         $("#defender").empty();
         isEnemy = false;
