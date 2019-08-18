@@ -117,12 +117,13 @@ $("#yoda-box").on("click", function(){
 
 // make an attack function and attach it to the onclick listener for the button
 function attack(currentEnemy, currentHero) {
-    if(currentEnemy.health > 0) {
+    if (currentEnemy.health > 0) {
     currentEnemy.health -= currentHero.strength;
     console.log("health: " + currentEnemy.health);
     currentHero.strength += 8;
     console.log("strength: " + currentHero.strength);
-    } else {
+    } 
+    else {
         $("#defender").empty();
         isEnemy = false;
         count++;
@@ -135,5 +136,7 @@ function attack(currentEnemy, currentHero) {
 }
 
 
-$("#attack-button").on("click", attack);
+$("#attack-button").on("click", function(){
+    attack(currentEnemy, currentHero);
+});
 $("#reset-button").on("click", reset);
