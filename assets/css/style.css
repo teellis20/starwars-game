@@ -61,6 +61,7 @@ p {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    background: white;
 }
 
 h3 {
@@ -70,6 +71,20 @@ h3 {
     font-size: 20px;
 }
 
+h2 {
+    font-family: "star_jedi_outlineregular";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 27px;
+}
+
+#messages {
+    width: 45%;
+    background: white;
+}
+
+
+
 button {
     margin: 10px;
     background: white;
@@ -78,4 +93,11 @@ button {
     padding: 10px 24px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+#yoda-health,
+#kylo-health,
+#obi-health,
+#maul-health {
+background: white;
 }
