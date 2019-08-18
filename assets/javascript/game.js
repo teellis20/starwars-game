@@ -1,21 +1,25 @@
 var kylo = {
+    name: "kylo",
     health: 110,
     strength: 5,
  
 };
 
 var maul = {
+    name: "maul",
     health: 125,
     strength: 10,
 
 };
 
 var obi = {
+    name: "obi",
     health: 150,
     strength: 20,
 };
 
 var yoda = {
+    name: "yoda",
     health: 180,
     strength: 25,
 };
@@ -53,12 +57,38 @@ function reset() {
     obi.strength = 20;
     yoda.health = 180;
     yoda.strength = 25;
+    showHealth();
+    $("#kylo-box").appendTo( $("#at-start"));
+    $("#maul-box").appendTo( $("#at-start"));
+    $("#obi-box").appendTo( $("#at-start"));
+    $("#yoda-box").appendTo( $("#at-start"));
 }
 
+function showHealth() {
 $("#kylo-health").html(kylo.health);
 $("#maul-health").html(maul.health);
 $("#obi-health").html(obi.health);
 $("#yoda-health").html(yoda.health);
+}
+
+showHealth();
+
+function counterAttack(currentEnemy, currentHero) {
+    currentHero.health -= currentEnemy.strength;
+    if (currentHero.health <= 0) {
+        $("#" + currentHero.name + "-box").detach();
+        $("#messages").html("<h2>The Force is Weak in This one! You Lost The Game!</h2>");
+            $("#reset").html("<button>Reset</button").children().attr("id","reset-button");
+            $("#reset-button").on("click", function(){
+                location.reload();
+                reset();
+                console.log("reset button clicked");
+                
+                
+            });         
+    }
+
+}
 
 // make if statements where if clicked at start, chooses your character and moves the rest to enemies
 
@@ -119,24 +149,37 @@ $("#yoda-box").on("click", function(){
 function attack(currentEnemy, currentHero) {
     if (currentEnemy.health > 0) {
     currentEnemy.health -= currentHero.strength;
+    currentHero.health -= currentEnemy.strength;
     console.log("health: " + currentEnemy.health);
     currentHero.strength += 8;
     console.log("strength: " + currentHero.strength);
-    } 
-    else {
+    showHealth();
+    counterAttack(currentEnemy, currentHero);
+    if (currentEnemy.health <= 0) {
         $("#defender").empty();
         isEnemy = false;
         count++;
         console.log(count);
         if (count === 3) {
             $("#messages").html("<h2>You Win!! Grab a Wookie, and Celebrate!</h2>");
-            $("#reset").html("<button id='reset-button'>Reset</button")
-        }
+            $("#reset").html("<button>Reset</button").children().attr("id","reset-button");
+            $("#reset-button").on("click", function(){
+                location.reload();
+                reset();
+                console.log("reset button clicked");
+            });         
+
+            }
+        } 
     } 
 }
 
 
 $("#attack-button").on("click", function(){
+    if(isEnemy === true) {
     attack(currentEnemy, currentHero);
+    } else {
+        alert("You need to pick an emeny to attack!")
+    }
 });
-$("#reset-button").on("click", reset);
+
