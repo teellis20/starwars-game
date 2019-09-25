@@ -1,6 +1,7 @@
 # unit-4-game
 
-This is a StarWars themed game where you get to pick your favorite hero (or villain) and battle it out with the remaining field.
+This is a StarWars themed game where you get to pick your favorite hero (or villain) and battle it out with the remaining field of players.
+https://teellis20.github.io/starwars-game/
 
 How to play:
 
